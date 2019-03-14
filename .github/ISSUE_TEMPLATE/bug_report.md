@@ -34,7 +34,8 @@ Do you want to ask a question? Are you looking for support? YOURLS Discourse is 
 
 ## Versions
 
-You can get this information from referencing `CHANGELOG.md`. Also, please include the OS and what version of the OS you're running.
+You can get this information from referencing `CHANGELOG.md` or the releases page.
+Also, please include the OS and what version of the OS you're running.
 
 ## Additional information
 
