@@ -30,13 +30,13 @@ Good bug reports are extremely helpful - thank you!
 
 Guidelines for bug reports:
 
-1. **Use the GitHub issue search**.  
+1. **Use the GitHub issue search**  
    Check if the issue has already been reported. Reporting duplicates is a waste of
    time for everyone. Search in **all issues**, open and closed.
-2. **Check if the issue has been fixed**.  
+2. **Check if the issue has been fixed**  
    Try to reproduce it using the latest `master` or development branch in the repository.
    Maybe it has been fixed since the last stable release.
-3. **Give details**.  
+3. **Give details**  
    A good bug report shouldn't leave others needing to chase you up for more
    information. Please try to be as detailed as possible in your report.
    Give any information that is relevant to the bug: 
@@ -45,7 +45,7 @@ Guidelines for bug reports:
    * Browser name & version
    
    What is the expected output? What do you see instead? See the report example below.  
-7. **Isolate the problem**.  
+7. **Isolate the problem**  
    Isolate the problem as much as you can, reduce to the bare minimum required to reproduce the issue.
    Don't describe a general situation that doesn't work as expected and just count on us to pin
    point the problem. 
@@ -67,14 +67,13 @@ Good pull requests - patches, improvements, new features - are a fantastic
 help. They should remain focused in scope and avoid containing unrelated
 commits.
 
-1. **Please ask first**
-   Before embarking on any significant pull request (e.g.
-   implementing features, refactoring code), otherwise you risk spending a lot
-   of time working on something that the developers might not want to merge into the
-   project.
+1. **Please ask first**  
+   Before embarking on any significant pull request (e.g. implementing features,
+   refactoring code), otherwise you risk spending a lot of time working on
+   something that the developers might not want to merge into the project.
 2. **Licensing**  
    By submitting a patch, you agree that your code will be licensed under the
-   [MIT License](https://github.com/YOURLS/YOURLS/blob/master/LICENSE.md) terms.
+   [MIT License](https://github.com/YOURLS/YOURLS/blob/master/LICENSE) terms.
 3. **Coding Standards**  
    Please adhere to the coding conventions used throughout the project (indentation,
    comments, etc.). Make sure you've tested your patch under
@@ -83,7 +82,7 @@ commits.
 Adhering to the following this process is the best way to get your work
 merged:
 
-1. [Fork](http://help.github.com/fork-a-repo/) the repo, clone your fork,
+1. [Fork](https://help.github.com/fork-a-repo/) the repo, clone your fork,
    and configure the remotes:
 
    ```bash
@@ -110,7 +109,7 @@ merged:
    ```
 
 4. Commit your changes in logical chunks. Please adhere to these [git commit
-   message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+   message guidelines](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
    or your code is unlikely be merged into the main project. Use Git's
    [interactive rebase](https://help.github.com/articles/interactive-rebase)
    feature to tidy up your commits before making them public.
