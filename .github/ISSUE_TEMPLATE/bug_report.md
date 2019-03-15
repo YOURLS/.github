@@ -1,8 +1,10 @@
 ---
 name: Bug report
-about: 🐛 Create a bug report
-tags:
-  - bug
+about: "\U0001F41B Create a bug report"
+title: ''
+labels: bug
+assignees: ''
+
 ---
 
 <!--
@@ -16,27 +18,30 @@ Do you want to ask a question? Are you looking for support? YOURLS Discourse is 
 * [ ] I've read the [docs](https://yourls.org/) and followed them (if applicable)
 * [ ] This is not a personal support request that should be posted on the [YOURLS Discourse](https://discourse.yourls.org/) community
 
-## Description
+**Describe the bug**
+A clear and concise description of what the bug is.
 
-[Description of the issue]
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-## Steps to reproduce
+**Expected behavior**
+A clear and concise description of what you expected to happen.
 
-1. [First step]
-2. [Second step]
-3. [and so on...]
+**Actual behavior**
+What actually happens.
 
-**Expected behavior:** [What you expect to happen]
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
-**Actual behavior:** [What actually happens]
-
-**Reproduces how often:** [What percentage of the time does it reproduce?]
-
-## Versions
-
+**Versions**
 You can get this information from referencing `CHANGELOG.md` or the releases page.
-Also, please include the OS and what version of the OS you're running.
+Also, please include:
+* The OS and what version of the OS you're running.
+* Plugins or extensions activated if applicable.
 
-## Additional information
-
+**Additional context**
 Any additional information, configuration or data that might be necessary to reproduce the issue.
