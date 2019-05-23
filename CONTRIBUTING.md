@@ -128,12 +128,3 @@ merged:
 
 10. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
     with a clear title and description.
-
-
-## Security issues
-
-Security issues are a special case. If you find a security hole in YOURLS, disclosing it
-to the public with opening an issue is not the ideal.
-
-Make 100% sure it is a security hole (same process as bug reports) but instead of opening
-an issue, send an email to <yourls@yourls.org>.
