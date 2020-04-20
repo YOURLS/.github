@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Latest major version in terms of [semantic verisonning](https://semver.org/) is supported.
+Latest major version in terms of [semantic versioning](https://semver.org/) is supported.
 
 | Version | Supported          |
 | ------- | ------------------ |
