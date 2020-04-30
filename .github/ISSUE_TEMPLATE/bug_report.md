@@ -13,8 +13,8 @@ Do you want to ask a question? Are you looking for support? YOURLS Discourse is 
 
 -->
 
-* [ ] I've read the [guidelines for Contributing to YOURLS Projects](https://github.com/YOURLS/.github/blob/master/CONTRIBUTING.md)
-* [ ] This request isn't a duplicate of an existing issue
+* [ ] I've read the [Troubleshooting First Steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps)
+* [ ] This request isn't a duplicate of an existing issue, opened or closed
 * [ ] I've read the [docs](https://yourls.org/) and followed them (if applicable)
 * [ ] This is not a personal support request that should be posted on the [YOURLS Discourse](https://discourse.yourls.org/) community
 
@@ -22,7 +22,7 @@ Do you want to ask a question? Are you looking for support? YOURLS Discourse is 
 A clear and concise description of what the bug is.
 
 **To Reproduce**
-Steps to reproduce the behavior:
+Steps to reproduce the behavior. This is mandatory if you expect someone to fix the problem. Example:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
