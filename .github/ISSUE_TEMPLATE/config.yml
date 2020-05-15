@@ -2,4 +2,4 @@ blank_issues_enabled: true
 contact_links:
   - name: Community Forum
     url: https://discourse.yourls.org
-    about: Please ask and answer questions on the YOURLS Discourse.
+    about: Have a question? Not sure if your issue affects everyone reproducibly? The quickest way to get help is on the YOURLS Discourse.
