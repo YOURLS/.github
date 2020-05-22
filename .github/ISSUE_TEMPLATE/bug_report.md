@@ -11,6 +11,8 @@ assignees: ''
 
 Do you want to ask a question? Are you looking for support? YOURLS Discourse is the best place for getting support: https://discourse.yourls.org/
 
+**PLEASE NOTE** : if you file and issue without using this template, and your issue doesn't provide enough information, it will be deleted without notice or question asked.
+
 -->
 
 * [ ] I've read the [Troubleshooting First Steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps)
