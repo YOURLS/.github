@@ -1,6 +1,10 @@
 name: PHP CI
 
-on: [ push ]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   test:
@@ -23,23 +27,36 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Use PHP ${{ matrix.php_version }}
-        uses: shivammathur/setup-php@2.2.2
-        with:
-          php-version: ${{ matrix.php_version }}
-          extension-csv: xdebug, mbstring, curl, zip, dom, simplexml, intl, mysql
+    - name: Use PHP ${{ matrix.php_version }}
+      uses: shivammathur/setup-php@2.2.2
+      with:
+        php-version: ${{ matrix.php_version }}
+        extension-csv: xdebug, mbstring, curl, zip, dom, simplexml, intl, mysql
+          
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+      
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
 
-      - name: Install
-        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+    - name: Install dependencies
+      if: steps.composer-cache.outputs.cache-hit != 'true'
+      run: composer install --prefer-dist --no-progress --no-suggest
         env:
           APP_ENV: testing
 
-      - name: Lint
-        run: composer run lint
+    - name: Lint
+      run: composer run lint
 
-      - name: Test
-        run: composer run test
-        env:
-          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
+    - name: Test
+      run: composer run test
+      env:
+        DB_PORT: ${{ job.services.mysql.ports['3306'] }}
