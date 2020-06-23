@@ -20,7 +20,7 @@ jobs:
       mysql:
         image: mariadb
         ports:
-          - 3306
+        - 3306
         env:
           MYSQL_ROOT_PASSWORD: secret
           MYSQL_DATABASE: test
@@ -50,8 +50,8 @@ jobs:
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
-        env:
-          APP_ENV: testing
+      env:
+        APP_ENV: testing
 
     - name: Lint
       run: composer run lint
