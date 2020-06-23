@@ -1,0 +1,45 @@
+name: PHP CI
+
+on: [ push ]
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php_version }}
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        php_version: [7.3, 7.4]
+        
+    services:
+      mysql:
+        image: mariadb
+        ports:
+          - 3306
+        env:
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_DATABASE: test
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use PHP ${{ matrix.php_version }}
+        uses: shivammathur/setup-php@2.2.2
+        with:
+          php-version: ${{ matrix.php_version }}
+          extension-csv: xdebug, mbstring, curl, zip, dom, simplexml, intl, mysql
+
+      - name: Install
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+        env:
+          APP_ENV: testing
+
+      - name: Lint
+        run: composer run lint
+
+      - name: Test
+        run: composer run test
+        env:
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
