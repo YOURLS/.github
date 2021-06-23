@@ -1,0 +1,79 @@
+name: Bug report
+description: \U0001F41B Report a reproducible bug and help us improve
+labels: bug
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+  - type: checkboxes
+    id: relevance
+    attributes:
+      label: Submission validity
+      description: This new report is relevant and not duplicated
+      options:
+        - label: This is not a personal support request, that should be posted on [discussions community](https://github.com/YOURLS/YOURLS/discussions)
+          required: true
+        - label: This request isn't a duplicate of an existing issue, opened or closed
+          required: true
+  - type: checkboxes
+    id: troubleshooting
+    attributes:
+      label: Personnal troubleshooting
+      description: Before submitting you have checked your deployment and followed usual troubleshooting steps
+      options:
+        - label: I've read the [documentation](https://yourls.org/) my usage follow them
+          required: true
+        - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps)
+          required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Description
+      description: What happened?
+      placeholder: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: expectation
+    attributes:
+      label: Expectation
+      description: What was expected?
+      placeholder: A clear and concise description of what you expected to happen.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: YOURLS version used
+      placeholder: X.Y.Z
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What was expected?
+      placeholder: Any additional information, configuration or data that might be necessary to reproduce the issue.
+    validations:
+      required: false
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Steps to reproduce the behavior. This is mandatory if you expect someone to fix the problem.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
