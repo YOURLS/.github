@@ -1,5 +1,5 @@
 name: Bug report
-description: \U0001F41B Report a reproducible bug and help us improve
+description: 🐛 Report a reproducible bug and help us improve
 labels: bug
 assignees: []
 body:
@@ -31,26 +31,10 @@ body:
       label: Personnal troubleshooting
       description: Before submitting you have checked your deployment and followed usual troubleshooting steps
       options:
-        - label: I've read the [documentation](https://yourls.org/) my usage follow them
+        - label: I've read the [documentation](https://yourls.org/) and made sure to follow them
           required: true
-        - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps)
+        - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps) guide
           required: true
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: Description
-      description: What happened?
-      placeholder: A clear and concise description of what the bug is.
-    validations:
-      required: true
-  - type: textarea
-    id: expectation
-    attributes:
-      label: Expectation
-      description: What was expected?
-      placeholder: A clear and concise description of what you expected to happen.
-    validations:
-      required: false
   - type: input
     id: version
     attributes:
@@ -60,11 +44,22 @@ body:
     validations:
       required: true
   - type: textarea
-    id: context
+    id: what-happened
     attributes:
-      label: Context
+      label: Description
+      description: What happened?
+      placeholder: |
+        A clear and concise description of what the bug is.
+        A screenshot to illustrate the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expectation
+    attributes:
+      label: Expectation
       description: What was expected?
-      placeholder: Any additional information, configuration or data that might be necessary to reproduce the issue.
+      placeholder: |
+        A clear and concise description of what you expected to happen.
     validations:
       required: false
   - type: textarea
@@ -73,7 +68,17 @@ body:
       label: Reproduction steps
       description: Steps to reproduce the behavior. This is mandatory if you expect someone to fix the problem.
       placeholder: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
+        1. Go to …
+        2. Click on …
+        3. Scroll down to …
         4. See error
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What was expected?
+      placeholder: |
+        Any additional information, configuration or data that might be necessary to reproduce the issue.
+        Other software version.
+    validations:
+      required: false
