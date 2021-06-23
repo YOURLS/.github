@@ -13,7 +13,7 @@ body:
       label: Code of Conduct
       description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I agree to follow this project's Code of Conduct.
           required: true
   - type: checkboxes
     id: relevance
@@ -21,9 +21,9 @@ body:
       label: Submission validity
       description: This new report is relevant and not duplicated
       options:
-        - label: This is not a personal support request, that should be posted on [discussions community](https://github.com/YOURLS/YOURLS/discussions)
+        - label: This is not a personal support request, that should be posted on [discussions community](https://github.com/YOURLS/YOURLS/discussions).
           required: true
-        - label: This request isn't a duplicate of an existing issue, opened or closed
+        - label: I checked [current issues](https://github.com/YOURLS/YOURLS/issues) and this request isn't a duplicate of an existing issue, opened or closed.
           required: true
   - type: checkboxes
     id: troubleshooting
@@ -31,9 +31,9 @@ body:
       label: Personnal troubleshooting
       description: Before submitting you have checked your deployment and followed usual troubleshooting steps
       options:
-        - label: I've read the [documentation](https://yourls.org/) and made sure to follow them
+        - label: I've read the [documentation](https://yourls.org/) and made sure to follow them.
           required: true
-        - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps) guide
+        - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps) guide.
           required: true
   - type: input
     id: version
