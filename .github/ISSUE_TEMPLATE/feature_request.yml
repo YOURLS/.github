@@ -1,0 +1,56 @@
+name: Feature request
+description: 💡 Suggest an idea for this project
+labels:
+  - enhancement
+assignees: []
+body:
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md).
+          required: true
+  - type: checkboxes
+    id: relevance
+    attributes:
+      label: Submission validity
+      description: This new report is relevant and not duplicated
+      options:
+        - label: This is not a personal support request, that should be posted on [discussions community](https://github.com/YOURLS/YOURLS/discussions).
+          required: true
+        - label: I checked [current issues](https://github.com/YOURLS/YOURLS/issues) and this request isn't a duplicate of an existing issue, opened or closed.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Summary
+      description:
+      placeholder: |
+        One paragraph explanation of the feature.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description:
+      placeholder: |
+        Why are we doing this?
+        What use cases does it support?
+        What is the expected outcome?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Describe the solution
+      description:
+      placeholder: |
+        A clear and concise description of what you want to happen.
+        Is your feature request related to a problem?
+        Describe alternatives you've considered.
+        Add any other context or screenshots about the feature request here.
+    validations:
+      required: false
