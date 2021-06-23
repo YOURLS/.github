@@ -29,7 +29,7 @@ body:
   - type: checkboxes
     id: troubleshooting
     attributes:
-      label: Personnal troubleshooting
+      label: Self troubleshooting
       description: Before submitting you have checked your deployment and followed usual troubleshooting steps
       options:
         - label: I've read the [documentation](https://yourls.org/) and made sure to follow them.
