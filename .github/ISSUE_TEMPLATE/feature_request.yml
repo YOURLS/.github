@@ -1,11 +1,10 @@
-name: Feature request
+name: Suggest a feature
 description: 💡 Suggest an idea for this project
 labels:
   - enhancement
 assignees: []
 body:
   - type: checkboxes
-    id: terms
     attributes:
       label: Code of Conduct
       description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md)
@@ -13,7 +12,6 @@ body:
         - label: I agree to follow this project's [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md).
           required: true
   - type: checkboxes
-    id: relevance
     attributes:
       label: Submission validity
       description: This new report is relevant and not duplicated
@@ -23,7 +21,6 @@ body:
         - label: I checked [current issues](https://github.com/YOURLS/YOURLS/issues) and this request isn't a duplicate of an existing issue, opened or closed.
           required: true
   - type: textarea
-    id: description
     attributes:
       label: Summary
       description:
@@ -32,7 +29,6 @@ body:
     validations:
       required: true
   - type: textarea
-    id: motivation
     attributes:
       label: Motivation
       description:
@@ -43,7 +39,6 @@ body:
     validations:
       required: true
   - type: textarea
-    id: context
     attributes:
       label: Describe the solution
       description:

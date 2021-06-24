@@ -1,15 +1,10 @@
-name: Bug report
+name: Report a bug
 description: 🐛 Report a reproducible bug and help us improve
 labels:
   - bug
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
   - type: checkboxes
-    id: terms
     attributes:
       label: Code of Conduct
       description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md)
@@ -17,7 +12,6 @@ body:
         - label: I agree to follow this project's [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md).
           required: true
   - type: checkboxes
-    id: relevance
     attributes:
       label: Submission validity
       description: This new report is relevant and not duplicated
@@ -27,12 +21,11 @@ body:
         - label: I checked [current issues](https://github.com/YOURLS/YOURLS/issues) and this request isn't a duplicate of an existing issue, opened or closed.
           required: true
   - type: checkboxes
-    id: troubleshooting
     attributes:
       label: Self troubleshooting
-      description: Before submitting you have checked your deployment and followed usual troubleshooting steps
+      description: Before submitting you have checked your deployment validity and followed usual troubleshooting steps
       options:
-        - label: I've read the [documentation](https://yourls.org/) and made sure to follow them.
+        - label: I've read the [documentation](https://yourls.org/) and made sure to follow it.
           required: true
         - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps) guide.
           required: true
@@ -40,12 +33,11 @@ body:
     id: version
     attributes:
       label: Version
-      description: YOURLS version used
+      description: Relevant [release of YOURLS](https://github.com/YOURLS/YOURLS/releases)
       placeholder: X.Y.Z
     validations:
       required: true
   - type: textarea
-    id: what-happened
     attributes:
       label: Description
       description: What happened?
@@ -55,7 +47,6 @@ body:
     validations:
       required: true
   - type: textarea
-    id: expectation
     attributes:
       label: Expectation
       description: What was expected?
@@ -64,7 +55,6 @@ body:
     validations:
       required: false
   - type: textarea
-    id: reproduction
     attributes:
       label: Reproduction steps
       description: Steps to reproduce the behavior. This is mandatory if you expect someone to fix the problem.
@@ -74,7 +64,6 @@ body:
         3. Scroll down to …
         4. See error
   - type: textarea
-    id: context
     attributes:
       label: Context
       description: What was expected?
