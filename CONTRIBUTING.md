@@ -35,7 +35,7 @@ Guidelines for bug reports:
    Check if the issue has already been reported. Reporting duplicates is a waste of
    time for everyone. Search in **all issues**, open and closed.
 2. **Check if the issue has been fixed**  
-   Try to reproduce it using the latest `master` or development branch in the repository.
+   Try to reproduce it using the latest `main` or development branch in the repository.
    Maybe it has been fixed since the last stable release.
 3. **Give details**  
    A good bug report shouldn't leave others needing to chase you up for more
