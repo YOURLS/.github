@@ -1,11 +1,13 @@
+### About
+
 **YOURLS** is a set of PHP scripts that will allow you to run **Y**our **O**wn **URL** **S**hortener, on **your** server. You'll have full control over your data, detailed stats, analytics, plugins, and more. It's free and open-source.
 
-### Install YOURLS
+### Getting Started
 
 * Read [yourls.org](https://yourls.org) for starters.
 * There are important additional information on the [Wiki documentation](https://github.com/YOURLS/YOURLS/wiki/).
 
-### Community news, tips and tricks
+### Community
 
 * Read and subscribe to the [The Official YOURLS Blog](http://blog.yourls.org)
 * Check what the user community makes: plugins, tools, guides and more on [Awesome YOURLS](https://github.com/YOURLS/awesome-yourls)
