@@ -9,7 +9,7 @@
 
 ### Community
 
-* Read and subscribe to the [The Official YOURLS Blog](http://blog.yourls.org)
+* Read and subscribe to the [The Official YOURLS Blog](https://blog.yourls.org)
 * Check what the user community makes: plugins, tools, guides and more on [Awesome YOURLS](https://github.com/YOURLS/awesome-yourls)
 * Engage users and ask for help in our [community discussions](https://github.com/YOURLS/YOURLS/discussions)
 * Keep track of development: "Star" and "Watch" this project, follow [releases](https://github.com/YOURLS/YOURLS/releases)
