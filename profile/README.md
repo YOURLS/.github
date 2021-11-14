@@ -21,7 +21,7 @@ all skill levels!
 
 * If you're looking to **ease your way into the project**, try out a
   [good first issue](https://github.com/YOURLS/YOURLS/contribute).
-* If you are interested in helping contribute to YOURLS, please take a look at
+* If you are interested in contributing to YOURLS, please take a look at
   our [Contributing Guide](https://github.com/YOURLS/.github/blob/main/CONTRIBUTING.md).
 * If you would like to **share a YOURLS-related project, component, or tool**, submit it with 
   a pull request to [the curated _Awesome YOURLS_ list](https://github.com/YOURLS/awesome-yourls).
