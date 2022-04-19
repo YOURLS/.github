@@ -27,7 +27,7 @@ body:
       options:
         - label: I've read the [documentation](https://yourls.org/) and made sure to follow it.
           required: true
-        - label: I've read the [troubleshooting first steps](https://github.com/YOURLS/YOURLS/wiki/Troubleshooting-first-steps) guide.
+        - label: I've read the [troubleshooting first steps](https://docs.yourls.org/guide/troubleshooting/first-steps.html) and [frequent issues](https://docs.yourls.org/guide/troubleshooting/frequent-issues.html) guides.
           required: true
   - type: input
     id: version

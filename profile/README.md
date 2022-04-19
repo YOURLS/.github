@@ -5,7 +5,7 @@
 ### 🚀 Getting Started
 
 * Read [yourls.org](https://yourls.org) for starters.
-* There are important additional information on the [Wiki documentation](https://github.com/YOURLS/YOURLS/wiki/).
+* The complete documentation is on [docs.yourls.org](https://docs.yourls.org) and contains everything from beginners to experts.
 
 ### 💬 Community
 
@@ -23,5 +23,5 @@ all skill levels!
   [good first issue](https://github.com/YOURLS/YOURLS/contribute).
 * If you are interested in contributing to YOURLS, please take a look at
   our [Contributing Guide](https://github.com/YOURLS/.github/blob/main/CONTRIBUTING.md).
-* If you would like to **share a YOURLS-related project, component, or tool**, submit it with 
+* If you would like to **share a YOURLS-related project, component, or tool**, submit it with
   a pull request to [the curated _Awesome YOURLS_ list](https://github.com/YOURLS/awesome-yourls).
