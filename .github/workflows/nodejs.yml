@@ -17,7 +17,7 @@ on:
         description: Matrix of actions to run
 
 jobs:
-  npm-run:
+  npm:
     name: ${{ matrix.action }}
     runs-on: ubuntu-latest
     strategy:
