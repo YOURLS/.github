@@ -12,7 +12,7 @@ on:
         type: string
       action-matrix:
         required: false
-        default: lint
+        default: no-run
         type: string
         description: Matrix of actions to run
 
@@ -35,7 +35,8 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm install
+        run: npm ci
 
       - name: Run ${{ matrix.action }}
+        if: matrix.action != 'no-run'
         run: npm run ${{ matrix.action }} --if-present
