@@ -12,7 +12,7 @@ on:
         type: string
       action-matrix:
         required: false
-        default: no-run
+        default: '["no-run"]'
         type: string
         description: Matrix of actions to run
 
