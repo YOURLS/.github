@@ -1,0 +1,41 @@
+# yamllint disable rule:document-start
+# https://docs.github.com/actions
+
+name: Node.js
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        default: lts/*
+        type: string
+      action-matrix:
+        required: false
+        default: lint
+        type: string
+        description: Matrix of actions to run
+
+jobs:
+  npm-run:
+    name: ${{ matrix.action }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        action: ${{ fromJSON(inputs.action-matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: 'npm'
+
+      - name: Install NPM packages
+        run: npm install
+
+      - name: Run ${{ matrix.action }}
+        run: npm run ${{ matrix.action }} --if-present
