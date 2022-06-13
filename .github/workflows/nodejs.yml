@@ -15,6 +15,10 @@ on:
         default: '["no-run"]'
         type: string
         description: Matrix of actions to run
+      artifact-path:
+        required: false
+        default: ''
+        type: string
 
 jobs:
   npm:
@@ -40,3 +44,10 @@ jobs:
       - name: Run ${{ matrix.action }}
         if: matrix.action != 'no-run'
         run: npm run ${{ matrix.action }} --if-present
+
+      - name: Upload build files
+        if: matrix.action == 'build' && inputs.artifact-path != ''
+        uses: actions/upload-artifact@v3
+        with:
+          name: npm-build-artifact
+          path: ${{ inputs.artifact-path }}
