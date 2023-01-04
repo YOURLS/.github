@@ -5,13 +5,13 @@
 ### 🚀 Getting Started
 
 * Read [yourls.org](https://yourls.org) for starters.
-* The complete documentation is on [docs.yourls.org](https://docs.yourls.org) and contains everything from beginners to experts.
+* The complete documentation is available at [yourls.org/docs](https://yourls.org/docs/) and contains everything from beginners to experts.
 
 ### 💬 Community
 
-* Read and subscribe to the [The Official YOURLS Blog](https://blog.yourls.org)
+* Read and subscribe to the [The Official YOURLS Blog](https://yourls.org/blog/)
 * Check what the user community makes: plugins, tools, guides and more on [Awesome YOURLS](https://github.com/YOURLS/awesome-yourls)
-* Engage users and ask for help in our [community discussions](https://github.com/YOURLS/YOURLS/discussions)
+* Engage users and ask for help in our [community discussions](https://github.com/orgs/YOURLS/discussions)
 * Keep track of development: "Star" and "Watch" this project, follow [releases](https://github.com/YOURLS/YOURLS/releases)
 
 ### 🤝 Contributing
