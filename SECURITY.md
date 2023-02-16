@@ -11,11 +11,19 @@ Latest major version in terms of [semantic versioning](https://semver.org/) is s
 
 ## Reporting a Vulnerability
 
-Please don't disclose security-related issues publicly, see below.  
-If you discover a security vulnerability within YOURLS, please send an email to YOURLS Team at <yourls@yourls.org>.  
-All security vulnerabilities will be promptly addressed.
+Please don't disclose security-related issues publicly.  
+If you discover a security vulnerability within YOURLS, please report it using one the methods below.  
+All security vulnerabilities will be promptly addressed, but please bear in mind we're a project run entirely by volunteers in our spare time.
 
-### Public PGP Key
+### Via GitHub Security Advisory (preferred)
+
+Report security issues by filling in [the security advisory form](https://github.com/YOURLS/YOURLS/security/advisories/new).
+
+### Via Email
+
+Send an email to YOURLS Team at <yourls@yourls.org>.
+
+#### Public PGP Key
 
 Public PGP key hosted in yourls.org [Web Key Directory](https://datatracker.ietf.org/doc/draft-koch-openpgp-webkey-service/).
 
