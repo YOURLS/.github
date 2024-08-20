@@ -17,8 +17,11 @@ on:
         description: Matrix of actions to run
       artifact-path:
         required: false
-        default: ''
+        default: ""
         type: string
+
+permissions:
+  contents: read
 
 jobs:
   npm:
@@ -36,7 +39,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install NPM packages
         run: npm ci

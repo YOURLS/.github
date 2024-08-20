@@ -10,19 +10,17 @@ the developers managing and developing this open source project. In return,
 they should reciprocate that respect in addressing your issue or assessing
 patches and features.
 
-
 ## Using the issue tracker
 
 The issue tracker is the preferred channel for [bug reports](#bug-reports),
 [feature requests](#feature-requests) and [submitting pull
 requests](#pull-requests), but please respect the following restrictions:
 
-* Please **do not** use the issue tracker for personal support requests.  
+- Please **do not** use the issue tracker for personal support requests.  
   Use [discussions](https://github.com/YOURLS/YOURLS/discussions) instead to ask the community for help.
 
-* Please **do not** derail or troll issues.  
+- Please **do not** derail or troll issues.  
   Keep the discussion on topic and respect the opinions of others.
-
 
 ## Bug reports
 
@@ -40,25 +38,25 @@ Guidelines for bug reports:
 3. **Give details**  
    A good bug report shouldn't leave others needing to chase you up for more
    information. Please try to be as detailed as possible in your report.
-   Give any information that is relevant to the bug: 
-   * YOURLS & MySQL & PHP versions
-   * Server Software
-   * Browser name & version
-   
-   What is the expected output? What do you see instead? See the report example below.  
-7. **Isolate the problem**  
+   Give any information that is relevant to the bug:
+
+   - YOURLS & MySQL & PHP versions
+   - Server Software
+   - Browser name & version
+
+   What is the expected output? What do you see instead? See the report example below.
+
+4. **Isolate the problem**  
    Isolate the problem as much as you can, reduce to the bare minimum required to reproduce the issue.
    Don't describe a general situation that doesn't work as expected and just count on us to pin
-   point the problem. 
-
+   point the problem.
 
 ## Feature requests
 
 Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to *you* to make a strong
+fits with the scope and aims of the project. It's up to _you_ to make a strong
 case to convince the YOURLS developers of the merits of this feature. Please
 provide as much detail and context as possible.
-
 
 ## Pull requests
 
@@ -125,5 +123,5 @@ merged:
    git push origin <topic-branch-name>
    ```
 
-10. [Open a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
-    with a clear title and description.
+7. [Open a Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+   with a clear title and description.
