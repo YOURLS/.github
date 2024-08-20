@@ -13,9 +13,14 @@ on:
     inputs:
       exclude:
         required: false
-        default: ''
+        default: ""
         type: string
         description: Regex filter of path to exclude
+
+permissions:
+  contents: read
+  packages: read
+  statuses: write
 
 jobs:
   super-linter:
