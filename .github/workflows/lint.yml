@@ -39,3 +39,4 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ github.token }}
           FILTER_REGEX_EXCLUDE: ${{ inputs.exclude }}
+          VALIDATE_JSCPD: false
