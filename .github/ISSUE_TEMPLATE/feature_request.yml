@@ -4,25 +4,19 @@ labels:
   - enhancement
 assignees: []
 body:
-  - type: checkboxes
+  - type: markdown
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md)
-      options:
-        - label: I agree to follow this project's [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md).
-          required: true
-  - type: checkboxes
-    attributes:
-      label: Submission validity
-      description: This new report is relevant and not duplicated
-      options:
-        - label: This is not a personal support request, that should be posted on [discussions community](https://github.com/YOURLS/YOURLS/discussions).
-          required: true
-        - label: I checked [current issues](https://github.com/YOURLS/YOURLS/issues) and this request isn't a duplicate of an existing issue, opened or closed.
-          required: true
+      value: |
+        > [!NOTE]
+        > This form is only for submitting _well-formed proposals_ to extend or modify YOURLS.
+        > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/YOURLS/YOURLS/discussions) instead.
+        
+        > [!TIP]
+        > Check [exiting issues](https://github.com/YOURLS/YOURLS/issues), opened or closed.
+        > Similar request might have been opened or answered already.
   - type: textarea
     attributes:
-      label: Summary
+      label: Proposed functionality
       description:
       placeholder: |
         One paragraph explanation of the feature.
@@ -30,7 +24,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Motivation
+      label: Use case
       description:
       placeholder: |
         Why are we doing this?
@@ -40,7 +34,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Describe the solution
+      label: Potential solution
       description:
       placeholder: |
         A clear and concise description of what you want to happen.
