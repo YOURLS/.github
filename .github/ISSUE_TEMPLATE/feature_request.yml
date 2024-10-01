@@ -9,11 +9,11 @@ body:
       value: |
         > [!NOTE]
         > This form is only for submitting _well-formed proposals_ to extend or modify YOURLS.
-        > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/YOURLS/YOURLS/discussions) instead.
+        > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/orgs/YOURLS/discussions) instead.
         
         > [!TIP]
         > Check [exiting issues](https://github.com/YOURLS/YOURLS/issues), opened or closed.
-        > Similar request might have been opened or answered already.
+        > Similar requests might have been opened or answered already.
   - type: textarea
     attributes:
       label: Proposed functionality

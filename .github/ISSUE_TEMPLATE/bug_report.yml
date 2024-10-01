@@ -9,7 +9,7 @@ body:
       value: |
         > [!NOTE]
         > This form is only for reporting _reproducible bugs_.
-        > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/YOURLS/YOURLS/discussions) instead.
+        > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/orgs/YOURLS/discussions) instead.
         
         > [!TIP]
         > Check [exiting issues](https://github.com/YOURLS/YOURLS/issues), opened or closed.
@@ -28,7 +28,7 @@ body:
     attributes:
       label: Version
       description: Relevant [release of YOURLS](https://github.com/YOURLS/YOURLS/releases)
-      placeholder: X.Y.Z
+      placeholder: x.y.z
     validations:
       required: true
   - type: textarea
