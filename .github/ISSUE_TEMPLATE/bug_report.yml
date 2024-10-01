@@ -4,22 +4,16 @@ labels:
   - bug
 assignees: []
 body:
-  - type: checkboxes
+  - type: markdown
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md)
-      options:
-        - label: I agree to follow this project's [Code of Conduct](https://github.com/YOURLS/.github/blob/main/CODE_OF_CONDUCT.md).
-          required: true
-  - type: checkboxes
-    attributes:
-      label: Submission validity
-      description: This new report is relevant and not duplicated
-      options:
-        - label: This is not a personal support request, that should be posted on [discussions community](https://github.com/YOURLS/YOURLS/discussions).
-          required: true
-        - label: I checked [current issues](https://github.com/YOURLS/YOURLS/issues) and this request isn't a duplicate of an existing issue, opened or closed.
-          required: true
+      value: |
+        > [!NOTE]
+        > This form is only for reporting _reproducible bugs_.
+        > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/YOURLS/YOURLS/discussions) instead.
+        
+        > [!TIP]
+        > Check [exiting issues](https://github.com/YOURLS/YOURLS/issues), opened or closed.
+        > Similar cases might have been answered already.
   - type: checkboxes
     attributes:
       label: Self troubleshooting
@@ -48,7 +42,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Expectation
+      label: Expected Behavior
       description: What was expected?
       placeholder: |
         A clear and concise description of what you expected to happen.
@@ -56,7 +50,7 @@ body:
       required: false
   - type: textarea
     attributes:
-      label: Reproduction steps
+      label: Steps to Reproduce
       description: Steps to reproduce the behavior. This is mandatory if you expect someone to fix the problem.
       placeholder: |
         1. Go to …
@@ -66,7 +60,6 @@ body:
   - type: textarea
     attributes:
       label: Context
-      description: What was expected?
       placeholder: |
         Any additional information, configuration or data that might be necessary to reproduce the issue.
         Other software version.
