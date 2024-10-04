@@ -1,7 +1,6 @@
 name: Report a bug
 description: 🐛 Report a reproducible bug and help us improve
-labels:
-  - bug
+type: bug
 assignees: []
 body:
   - type: markdown

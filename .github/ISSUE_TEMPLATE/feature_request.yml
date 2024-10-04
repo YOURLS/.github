@@ -1,7 +1,6 @@
 name: Suggest a feature
 description: 💡 Suggest an idea for this project
-labels:
-  - enhancement
+Type: enhancement
 assignees: []
 body:
   - type: markdown
