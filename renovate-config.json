@@ -8,6 +8,12 @@
   ],
   "labels": ["dependencies"],
   "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["!major"],
+      "automerge": true
+    }
+  ],
   "github-actions": {
     "enabled": false
   }
