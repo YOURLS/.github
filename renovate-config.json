@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Custom Renovate Preset",
+  "extends": [
+    "config:recommended",
+    ":configMigration",
+    ":disableDependencyDashboard"
+  ],
+  "labels": ["dependencies"],
+  "rangeStrategy": "bump",
+  "github-actions": {
+    "enabled": false
+  }
+}
