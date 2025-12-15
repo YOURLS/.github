@@ -50,7 +50,7 @@ jobs:
 
       - name: Upload build files
         if: matrix.action == 'build' && inputs.artifact-path != ''
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: npm-build-artifact
           path: ${{ inputs.artifact-path }}
