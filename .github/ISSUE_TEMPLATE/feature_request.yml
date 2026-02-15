@@ -11,7 +11,7 @@ body:
         > If you're looking for assistance with using YOURLS, please visit our [discussions community](https://github.com/orgs/YOURLS/discussions) instead.
         
         > [!TIP]
-        > Check [exiting issues](https://github.com/YOURLS/YOURLS/issues), opened or closed.
+        > Check [existing issues](https://github.com/YOURLS/YOURLS/issues), opened or closed.
         > Similar requests might have been opened or answered already.
   - type: textarea
     attributes:
