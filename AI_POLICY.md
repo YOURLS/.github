@@ -3,8 +3,7 @@
 The YOURLS project and organization have strict rules regarding AI usage.
 
 - **All AI usage in any form must be disclosed.** You must state
-  the AI model you used along with the extent to which the work
-  was AI-assisted.
+  the AI model you used along with the extent to which the work was AI-assisted.
 
 - **The human-in-the-loop must fully understand all code.** If you can't explain
   without AI what your changes do and how they interact with code, please do not
@@ -28,7 +27,8 @@ The YOURLS project and organization have strict rules regarding AI usage.
   accept pull requests where the origin is an AI agent that scanned the codebase and
   decided something could be "improved" -- refactored, renamed, reworded, or
   otherwise touched. If you cannot point to a concrete problem you faced as a user,
-  there is no pull request to submit.
+  there is no pull request to submit. Exception: security-related findings from a code
+  scanner are welcome, provided the submission still follows all other rules above.
 
 ## There are Humans Here
 
