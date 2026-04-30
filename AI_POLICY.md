@@ -23,6 +23,13 @@ The YOURLS project and organization have strict rules regarding AI usage.
   that. PRs that change whitespace, reword comments, or contain multiple
   unrelated sets of changes will be rejected.
 
+- **Pull Requests must originate from a real human need.** A valid PR addresses
+  a bug you actually encountered, or a feature you genuinely need. We do not
+  accept PRs where the origin is an AI agent that scanned the codebase and
+  decided something could be "improved" - refactored, renamed, reworded, or
+  otherwise touched. If you cannot point to a concrete problem you faced as a user,
+  there is no PR to submit.
+
 ## There are Humans Here
 
 Please remember that YOURLS is maintained by humans.
