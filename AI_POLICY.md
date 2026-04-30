@@ -3,7 +3,7 @@
 The YOURLS project and organization have strict rules regarding AI usage.
 
 - **All AI usage in any form must be disclosed.** You must state
-  the tool you used (e.g. Claude Code) along with the extent to which the work
+  the AI model you used along with the extent to which the work
   was AI-assisted.
 
 - **The human-in-the-loop must fully understand all code.** If you can't explain
@@ -18,17 +18,17 @@ The YOURLS project and organization have strict rules regarding AI usage.
   the preceding points: AI models are verbose and unfocused. Don't have your AI
   tool describe to us what you've found or changed; say it in your own words.
 
-- **Pull Requests must be focused.** If you want to submit a PR that fixes a
+- **Pull Requests must be focused.** If you want to submit a pull request that fixes a
   problem, enhances or introduce a new feature, make sure your code does just
-  that. PRs that change whitespace, reword comments, or contain multiple
+  that. Pull requests that change whitespace, reword comments, or contain multiple
   unrelated sets of changes will be rejected.
 
-- **Pull Requests must originate from a real human need.** A valid PR addresses
+- **Pull Requests must originate from a real human need.** A valid pull request addresses
   a bug you actually encountered, or a feature you genuinely need. We do not
-  accept PRs where the origin is an AI agent that scanned the codebase and
-  decided something could be "improved" - refactored, renamed, reworded, or
+  accept pull requests where the origin is an AI agent that scanned the codebase and
+  decided something could be "improved" -- refactored, renamed, reworded, or
   otherwise touched. If you cannot point to a concrete problem you faced as a user,
-  there is no PR to submit.
+  there is no pull request to submit.
 
 ## There are Humans Here
 
