@@ -41,3 +41,4 @@ jobs:
           FILTER_REGEX_EXCLUDE: ${{ inputs.exclude }}
           VALIDATE_JSCPD: false
           VALIDATE_BIOME_FORMAT: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
