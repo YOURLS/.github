@@ -31,4 +31,4 @@ Make sure your idea fits the project's scope, and provide context to make a stro
 - Your code will be licensed under the [MIT License](https://github.com/YOURLS/YOURLS/blob/master/LICENSE).
 
 
-❤️ Thank you !
+❤️ Thank you!
