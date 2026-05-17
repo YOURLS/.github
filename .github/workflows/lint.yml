@@ -16,6 +16,11 @@ on:
         default: ""
         type: string
         description: Regex filter of path to exclude
+      fix:
+        required: false
+        default: false
+        type: boolean
+        description: Fix linting and formatting issues
 
 permissions:
   contents: read
@@ -42,3 +47,12 @@ jobs:
           VALIDATE_JSCPD: false
           VALIDATE_BIOME_FORMAT: false
           VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+          FIX_CSS: ${{ inputs.fix }}
+          FIX_JSON: ${{ inputs.fix }}
+          FIX_JSONC: ${{ inputs.fix }}
+          FIX_MARKDOWN: ${{ inputs.fix }}
+          FIX_NATURAL_LANGUAGE: ${{ inputs.fix }}
+          FIX_TSX: ${{ inputs.fix }}
+          FIX_JAVASCRIPT_PRETTIER: ${{ inputs.fix }}
+          FIX_TYPESCRIPT_PRETTIER: ${{ inputs.fix }}
+          FIX_YAML_PRETTIER: ${{ inputs.fix }}
