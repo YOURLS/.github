@@ -45,14 +45,46 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           FILTER_REGEX_EXCLUDE: ${{ inputs.exclude }}
           VALIDATE_JSCPD: false
-          VALIDATE_BIOME_FORMAT: false
           VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
-          FIX_CSS: ${{ inputs.fix }}
-          FIX_JSON: ${{ inputs.fix }}
-          FIX_JSONC: ${{ inputs.fix }}
+          # < Use PYTHON_RUFF_FORMAT
+          VALIDATE_PYTHON_BLACK: false
+          # >
+          # < Use BIOME_LINT
+          VALIDATE_CSS: false
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JSON: false
+          VALIDATE_JSONC: false
+          VALIDATE_JSX: false
+          VALIDATE_TSX: false
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_VUE: false
+          FIX_BIOME_LINT: ${{ inputs.fix }}
+          # >
+          # < Use BIOME_FORMAT
+          # VALIDATE_CSS_PRETTIER: false
+          # VALIDATE_GRAPHQL_PRETTIER: false
+          # VALIDATE_HTML_PRETTIER: false
+          # VALIDATE_JAVASCRIPT_PRETTIER: false
+          # VALIDATE_JSON_PRETTIER: false
+          # VALIDATE_JSONC_PRETTIER: false
+          # VALIDATE_JSX_PRETTIER: false
+          # VALIDATE_MARKDOWN_PRETTIER: false
+          # VALIDATE_TYPESCRIPT_PRETTIER: false
+          # VALIDATE_VUE_PRETTIER: false
+          # VALIDATE_YAML_PRETTIER: false
+          # FIX_BIOME_FORMAT: ${{ inputs.fix }}
+          VALIDATE_BIOME_FORMAT: false
+          FIX_CSS_PRETTIER: ${{ inputs.fix }}
+          FIX_GRAPHQL_PRETTIER: ${{ inputs.fix }}
+          FIX_HTML_PRETTIER: ${{ inputs.fix }}
+          FIX_JAVASCRIPT_PRETTIER: ${{ inputs.fix }}
+          FIX_JSON_PRETTIER: ${{ inputs.fix }}
+          FIX_JSONC_PRETTIER: ${{ inputs.fix }}
+          FIX_JSX_PRETTIER: ${{ inputs.fix }}
+          FIX_MARKDOWN_PRETTIER: ${{ inputs.fix }}
+          FIX_TYPESCRIPT_PRETTIER: ${{ inputs.fix }}
+          FIX_TSX: ${{ inputs.fix }}
+          FIX_YAML_PRETTIER: ${{ inputs.fix }}
+          # >
           FIX_MARKDOWN: ${{ inputs.fix }}
           FIX_NATURAL_LANGUAGE: ${{ inputs.fix }}
-          FIX_TSX: ${{ inputs.fix }}
-          FIX_JAVASCRIPT_PRETTIER: ${{ inputs.fix }}
-          FIX_TYPESCRIPT_PRETTIER: ${{ inputs.fix }}
-          FIX_YAML_PRETTIER: ${{ inputs.fix }}
