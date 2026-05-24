@@ -83,7 +83,6 @@ jobs:
           FIX_JSX_PRETTIER: ${{ inputs.fix }}
           FIX_MARKDOWN_PRETTIER: ${{ inputs.fix }}
           FIX_TYPESCRIPT_PRETTIER: ${{ inputs.fix }}
-          FIX_TSX: ${{ inputs.fix }}
           FIX_YAML_PRETTIER: ${{ inputs.fix }}
           # >
           FIX_MARKDOWN: ${{ inputs.fix }}
