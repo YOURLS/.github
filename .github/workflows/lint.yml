@@ -23,14 +23,18 @@ on:
         description: Fix linting and formatting issues
 
 permissions:
-  contents: write
+  contents: read
   packages: read
   statuses: write
 
 jobs:
   super-linter:
-    name: Code Base
+    name: Super Linter
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
@@ -45,6 +49,77 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           FILTER_REGEX_EXCLUDE: ${{ inputs.exclude }}
           ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
+          VALIDATE_JSCPD: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
+          # < Use PYTHON_RUFF_FORMAT
+          VALIDATE_PYTHON_BLACK: false
+          # >
+          # < Use BIOME_LINT
+          VALIDATE_CSS: false
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JSON: false
+          VALIDATE_JSONC: false
+          VALIDATE_JSX: false
+          VALIDATE_TSX: false
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_VUE: false
+          # >
+          # < Use BIOME_FORMAT
+          # VALIDATE_CSS_PRETTIER: false
+          # VALIDATE_GRAPHQL_PRETTIER: false
+          # VALIDATE_HTML_PRETTIER: false
+          # VALIDATE_JAVASCRIPT_PRETTIER: false
+          # VALIDATE_JSON_PRETTIER: false
+          # VALIDATE_JSONC_PRETTIER: false
+          # VALIDATE_JSX_PRETTIER: false
+          # VALIDATE_MARKDOWN_PRETTIER: false
+          # VALIDATE_TYPESCRIPT_PRETTIER: false
+          # VALIDATE_VUE_PRETTIER: false
+          # VALIDATE_YAML_PRETTIER: false
+          VALIDATE_BIOME_FORMAT: false
+          # >
+
+  super-linter-fix:
+    name: Super Linter Fix
+    runs-on: ubuntu-latest
+    if: >
+      inputs.fix &&
+      github.event_name == 'pull_request' &&
+      github.ref_name != github.event.repository.default_branch &&
+      github.actor != 'yourls-bot[bot]'
+    permissions:
+      contents: write
+      packages: read
+      statuses: write
+    steps:
+      - name: Generate token
+        uses: actions/create-github-app-token@v3
+        id: app-token
+        with:
+          client-id: ${{ vars.BOT_CLIENT_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          permission-contents: write
+
+      - name: Get GitHub App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Checkout Code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Lint Code Base
+        uses: super-linter/super-linter/slim@v8.6.0
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          FILTER_REGEX_EXCLUDE: ${{ inputs.exclude }}
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
+          ENABLE_GITHUB_ACTIONS_STEP_SUMMARY: false
           VALIDATE_JSCPD: false
           VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
           # < Use PYTHON_RUFF_FORMAT
@@ -90,10 +165,8 @@ jobs:
           FIX_NATURAL_LANGUAGE: ${{ inputs.fix }}
 
       - name: Commit and push linting fixes
-        if: >
-          github.event_name == 'pull_request' &&
-          github.ref_name != github.event.repository.default_branch
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "Fix linting issues"
+          commit_author: ${{ steps.app-token.outputs.app-slug }}[bot] ${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com
