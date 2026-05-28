@@ -163,6 +163,7 @@ jobs:
           FIX_YAML_PRETTIER: ${{ inputs.fix }}
           # >
           FIX_MARKDOWN: ${{ inputs.fix }}
+          FIX_SPELL_CODESPELL: ${{ inputs.fix }}
           FIX_NATURAL_LANGUAGE: ${{ inputs.fix }}
 
       - name: Commit and push linting fixes
