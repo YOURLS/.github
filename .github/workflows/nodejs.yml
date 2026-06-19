@@ -33,7 +33,7 @@ jobs:
         action: ${{ fromJSON(inputs.action-matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v6
