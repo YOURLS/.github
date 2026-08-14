@@ -22,7 +22,7 @@ Make sure your idea fits the project's scope, and provide context to make a stro
 ## Pull requests
 
 - It's better to ask before starting any significant work.
-- Keep pull requests focused. 
+- Keep pull requests focused.
 - Limit pull requests to a single concern.
 - Avoid unrelated changes such as whitespace fixes or rewording comments elsewhere in the codebase.
 - Follow existing coding conventions.
