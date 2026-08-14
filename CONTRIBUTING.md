@@ -22,7 +22,6 @@ Make sure your idea fits the project's scope, and provide context to make a stro
 ## Pull requests
 
 - It's better to ask before starting any significant work.
-- AI use must follow our [AI Policy](AI_POLICY.md).
 - Keep pull requests focused. 
 - Limit pull requests to a single concern.
 - Avoid unrelated changes such as whitespace fixes or rewording comments elsewhere in the codebase.
@@ -30,5 +29,9 @@ Make sure your idea fits the project's scope, and provide context to make a stro
 - Unit tests are very welcome.
 - Your code will be licensed under the [MIT License](https://github.com/YOURLS/YOURLS/blob/master/LICENSE).
 
+## AI and other tools
+
+When using AI generation or analysis tools (e.g. GitHub Copilot or Claude Code), you must adhere to YOURLS' [AI Policy](AI_POLICY.md) when submitting the results.
+This applies to patches and pull requests, issue reports, security advisories, and _all_ other contributions.
 
 ❤️ Thank you!
