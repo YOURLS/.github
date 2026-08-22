@@ -1,0 +1,123 @@
+# Close pull requests opened by new accounts, or with a description too short to be useful.
+# Bots, org members, collaborators and previous contributors are never checked.
+
+#  #########################################
+#  #  IMPORTANT (and interesting :) NOTES  #
+#  #########################################
+#
+# 1) We're using `pull_request_target` and not `pull_request`:
+#
+#    With `pull_request`, a PR sent from a fork (so, most spam) gets a read only
+#    token. Things that would not work:
+#      - `gh pr close`   -> HTTP 403, the PR stays open
+#      - `gh pr comment` -> HTTP 403
+#      - secrets         -> empty
+#    With "Require approval for first-time contributors" the run would never start, and the PR would
+#    just wait for a maintainer, which defeats the point.
+#
+#    `pull_request_target` gets a token that can write. It also always runs this
+#    file as it is on `master`, so a PR cannot include an edit that disables this workflow.
+#
+#    That 'write' token makes running PR code dangerous. We're fine here because
+#    this workflow never checks out the PR (no `actions/checkout`). There is also no `uses:` step
+#    that could run arbitrary code from a supply chain attack.
+#
+#    In other words :
+#      - No attacker code ever runs.
+#      - The workflow only reads the PR data and calls the API.
+#      - NEVER add a checkout of the PR branch in this workflow.
+#
+#
+# 2) Every untrusted value reaches the shell through `env:`, never through `${{ }}` inside a `run:` block.
+#
+#    Values passed to env are never parsed as code.
+#    The PR body is only measured, never executed.
+#    Data that reaches the output is charset limited : Github handle, integers.
+#
+#
+# 3) Permissions are limited to the minimum needed:
+#
+#    Write access to pull requests, read access to contents : even a hypothetical compromise
+#    could not push to master, or read secrets.
+#
+#    Bash interpolations (`$()`, `${var}`) are only used on trusted values: digits produced by `gh` and `date`,
+#    text produced by `printf`, etc...
+
+
+name: Close low effort PRs
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+# Configure here
+env:
+  # Minimum age of the author's GitHub account, in days
+  MIN_AGE_DAYS: 7
+  # Minimum length of the PR description, in characters
+  MIN_BODY_LENGTH: 100
+  # Comment posted when closing, with some %TOKEN%:
+  MSG_CLOSE: "PR closed. Account @%PR_AUTHOR% too young and/or PR body too short. Feel free to comment to discuss it."
+  # Tokens for MSG_CLOSE should we want to give details: %PR_AUTHOR%, %AGE_DAYS%, %MIN_AGE_DAYS%, %BODY_LENGTH%, %MIN_BODY_LENGTH%
+
+jobs:
+  check-pr:
+    name: "Check PR author and description"
+
+    runs-on: ubuntu-latest
+
+    # Only strangers are checked: skip bots, and anyone already known here
+    if: >-
+      github.event.pull_request.user.type != 'Bot' &&
+      github.event.pull_request.author_association != 'OWNER' &&
+      github.event.pull_request.author_association != 'MEMBER' &&
+      github.event.pull_request.author_association != 'COLLABORATOR' &&
+      github.event.pull_request.author_association != 'CONTRIBUTOR'
+
+    steps:
+      - name: Check PR, close it if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          # Uppercase variables are the ones used as %TOKENS% in the
+          # message above, lowercase ones are internal.
+
+          # Account age
+          created_at=$(gh api "/users/${PR_AUTHOR}" --jq .created_at)
+          created_ctime=$(date -d "$created_at" +%s)
+          AGE_DAYS=$(( ( $(date +%s) - created_ctime ) / 86400 ))
+          echo "Author: ${PR_AUTHOR}, account created ${created_at} (${AGE_DAYS} days ago)"
+
+          # Description length (multiple whitespace counted as 1)
+          body=$(printf '%s' "$PR_BODY" | tr -s '[:space:]' ' ' | sed 's/^ //; s/ $//')
+          BODY_LENGTH=$(printf '%s' "$body" | wc -m)
+          echo "Description: ${BODY_LENGTH} chars"
+
+          # Both checks must pass, otherwise close the PR
+          close=""
+          if [ "$AGE_DAYS" -lt "$MIN_AGE_DAYS" ]; then
+            close=1
+          fi
+          if [ "$BODY_LENGTH" -lt "$MIN_BODY_LENGTH" ]; then
+            close=1
+          fi
+          
+          # If we don't need to close, exit cleanly
+          if [ -z "$close" ]; then
+            exit 0
+          fi
+
+          message="$MSG_CLOSE"
+          for token in PR_AUTHOR AGE_DAYS MIN_AGE_DAYS BODY_LENGTH MIN_BODY_LENGTH; do
+            message="${message//%${token}%/${!token}}"
+          done
+
+          echo "Closing ${PR_URL} with comment: ${message}"
+          gh pr close "$PR_URL" --comment "$message"
